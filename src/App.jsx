@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { ExploreMap } from "@/components/ExploreMap";
-import { Timeline } from "@/components/Timeline";
+import Timeline from "@/components/Timeline";
 import { Footer } from "@/components/Footer";
 
 function Home() {
