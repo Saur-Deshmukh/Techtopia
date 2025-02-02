@@ -45,38 +45,42 @@ const Timeline = () => {
     });
   }, []);
 
-  const events = [
+  const eventsDay1 = [
     {
-      year: "2020",
-      title: "Started College",
-      description: "Began my journey in Computer Engineering.",
+      time: "Day 1: 09:30 AM - 12:00PM",
+      title: "Blockchain Hackathon Presentation",
+      
     },
     {
-      year: "2021",
-      title: "First Hackathon",
-      description: "Participated in my first coding competition.",
+      time: "Day 1: 01:00 PM - 06:00PM",
+      title: "GPT Hackathon",
+      
     },
     {
-      year: "2022",
-      title: "Internship",
-      description: "Worked as a developer intern at XYZ company.",
+      time: "Day 1: 01:00 PM - 06:00PM",
+      title: "IOT Warzone",
+      
     },
     {
-      year: "2023",
-      title: "Major Project",
-      description: "Built a full-stack application using MERN stack.",
+      time: "Day 2: 09:30 AM - 12:00PM",
+      title: "Auto Expo",
+      
     },
     {
-      year: "2024",
-      title: "Graduation",
-      description: "Successfully graduated and started working in tech.",
+      time: "Day 2: 01:00 PM - 05:00PM",
+      title: "Bug Bounty",
+      
     },
   ];
+  
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 py-20 relative">
-      <h2 className="text-4xl font-bold text-white mb-10">Timeline</h2>
-
+    <div className="flex flex-col items-center justify-center min-h-screen py-20 relative">
+      <div className="text-center mb-20">
+        <h1 className="text-5xl font-bold bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-300 bg-clip-text text-transparent">
+          Timeline
+        </h1>
+      </div>
       {/* Timeline Container */}
       <div className="relative w-full max-w-4xl timeline-container">
         {/* Moving Line */}
@@ -85,7 +89,7 @@ const Timeline = () => {
           className="absolute top-0 left-1/2 w-1 bg-gradient-to-b from-purple-500 to-pink-500 timeline-line transform -translate-x-1/2"
         ></div>
 
-        {events.map((event, index) => (
+        {eventsDay1.map((event, index) => (
           <div
             key={index}
             ref={(el) => (timelineRef.current[index] = el)}
@@ -106,24 +110,17 @@ const Timeline = () => {
             >
               {/* Year Tag */}
               <span className="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-1 rounded-full text-sm">
-                {event.year}
+                {event.time}
               </span>
 
               {/* Card Content */}
-              <h3 className="text-xl font-semibold">{event.title}</h3>
-              <p className="text-gray-300">{event.description}</p>
-
-              {/* Hover Popup */}
-              {/* {hoverIndex === index && ( */}
-              {/* <div className="absolute bottom-full mb-2 p-3 bg-gray-700 text-white rounded-lg text-sm shadow-md opacity-90"> */}
-              {/* More details about {event.title}... */}
-              {/* </div> */}
-              {/* )} */}
+              <h3 className="text-xl font-semibold text-center">{event.title}</h3>
             </div>
           </div>
         ))}
       </div>
     </div>
+    
   );
 };
 
