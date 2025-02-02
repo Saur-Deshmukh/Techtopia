@@ -5,7 +5,7 @@ import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="border-t border-gray-800 bg-[#0D0D0F]">
+    <footer className="border-t border-gray-800 bg-[#05001f]">
       <div className="container mx-auto px-4 py-8">
         <div className="flex justify-between items-center">
           <BrowserRouter

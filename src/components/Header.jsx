@@ -4,7 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 
 export function Header() {
   return (
-    <header className="border-b border-gray-800 bg-[#0D0D0F]">
+    <header className="border-b border-gray-800 bg-[#05001f]">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <BrowserRouter href="/" className="flex items-center space-x-2">
           <span className="text-xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
