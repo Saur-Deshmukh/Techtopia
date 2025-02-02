@@ -1,337 +1,127 @@
-"use client";
+import React, { useEffect, useRef, useState } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-export function Timeline() {
+gsap.registerPlugin(ScrollTrigger);
+
+const Timeline = () => {
+  const timelineRef = useRef([]);
+  const lineRef = useRef(null);
+  const [hoverIndex, setHoverIndex] = useState(null);
+
+  useEffect(() => {
+    gsap.fromTo(
+      lineRef.current,
+      { height: 0 },
+      {
+        height: "100%",
+        duration: 2,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: ".timeline-container",
+          start: "top 80%",
+          end: "bottom bottom",
+          scrub: true,
+        },
+      }
+    );
+
+    timelineRef.current.forEach((el, index) => {
+      gsap.fromTo(
+        el,
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: el,
+            start: "top 85%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    });
+  }, []);
+
   const eventsDay1 = [
     {
-      id: 1,
-      time: "9:30 AM - 12:00 PM",
-      title: "BLockchain Hackathon",
+      time: "Day 1: 09:30 AM - 12:00PM",
+      title: "Blockchain Hackathon Presentation",
+      
     },
     {
-      id: 2,
-      time: "01:00 PM - 06:00 PM",
+      time: "Day 1: 01:00 PM - 06:00PM",
       title: "GPT Hackathon",
+      
     },
     {
-      id: 3,
-      time: "01:00 PM - 06:00 PM",
+      time: "Day 1: 01:00 PM - 06:00PM",
       title: "IOT Warzone",
+      
     },
-  ];
-  const eventsDay2 = [
     {
-      id: 1,
-      time: "9:30 AM - 12:00 PM",
+      time: "Day 2: 09:30 AM - 12:00PM",
       title: "Auto Expo",
+      
     },
     {
-      id: 2,
-      time: "01:00 PM - 05:00 PM",
+      time: "Day 2: 01:00 PM - 05:00PM",
       title: "Bug Bounty",
-    },
-    {
-      id: 3,
-      time: "05:00 PM - 06:00 PM",
-      title: "Drone Racing",
+      
     },
   ];
+  
 
   return (
-    <div style={{
-      minHeight: "100vh",
-      backgroundColor: "#05001f",
-      padding: "48px"
-    }}>
-      <div style={{
-        textAlign: "center",
-        marginBottom: "80px"
-      }}>
-        <h1 style={{
-          fontSize: "3.5rem",
-          fontWeight: "bold",
-          background: "linear-gradient(135deg, #7C3AED, #EC4899)",
-          WebkitBackgroundClip: "text",
-          WebkitTextFillColor: "transparent"
-        }}>
-          Techopia Day 1
+    <div className="flex flex-col items-center justify-center min-h-screen py-20 relative">
+      <div className="text-center mb-20">
+        <h1 className="text-5xl font-bold bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-300 bg-clip-text text-transparent">
+          Timeline
         </h1>
       </div>
+      {/* Timeline Container */}
+      <div className="relative w-full max-w-4xl timeline-container">
+        {/* Moving Line */}
+        <div
+          ref={lineRef}
+          className="absolute top-0 left-1/2 w-1 bg-gradient-to-b from-purple-500 to-pink-500 timeline-line transform -translate-x-1/2"
+        ></div>
 
-      <div style={{
-        maxWidth: "800px",
-        margin: "0 auto",
-        position: "relative"
-      }}>
-        <div style={{
-          position: "absolute",
-          top: "-48px",
-          left: "50%",
-          transform: "translateX(-50%)",
-          fontSize: "1.125rem",
-          fontWeight: "500",
-          background: "linear-gradient(135deg, #7C3AED, #EC4899)",
-          WebkitBackgroundClip: "text",
-          WebkitTextFillColor: "transparent"
-        }}>
-          Start
-        </div>
+        {eventsDay1.map((event, index) => (
+          <div
+            key={index}
+            ref={(el) => (timelineRef.current[index] = el)}
+            className={`flex items-center justify-${
+              index % 2 === 0 ? "start" : "end"
+            } w-full mb-10 relative`}
+            onMouseEnter={() => setHoverIndex(index)}
+            onMouseLeave={() => setHoverIndex(null)}
+          >
+            {/* Timeline Dot */}
+            <div className="absolute left-1/2 w-5 h-5 bg-gradient-to-b from-purple-500 to-pink-500 rounded-full transform -translate-x-1/2"></div>
 
-        <div style={{
-          position: "absolute",
-          left: "50%",
-          top: 0,
-          bottom: 0,
-          width: "2px",
-          transform: "translateX(-50%)",
-          background: "linear-gradient(180deg, #7C3AED, #EC4899)"
-        }} />
-
-        <div style={{
-          display: "flex",
-          flexDirection: "column",
-          gap: "96px"
-        }}>
-          {eventsDay1.map((event, index) => (
+            {/* Card */}
             <div
-              key={event.id}
-              style={{
-                position: "relative",
-                display: "flex",
-                justifyContent: index % 2 === 0 ? "flex-end" : "flex-start",
-                alignItems: "center"
-              }}
+              className={`relative w-1/2 p-5 rounded-lg shadow-lg bg-gray-800 text-white transition-transform transform hover:scale-105 border-2 border-transparent hover:border-purple-500 animate-glow ${
+                index % 2 === 0 ? "ml-auto" : "mr-auto"
+              }`}
             >
-              <div
-                style={{
-                  position: "absolute",
-                  left: "50%",
-                  transform: "translateX(-50%)",
-                  width: "16px",
-                  height: "16px",
-                  borderRadius: "50%",
-                  background: "linear-gradient(135deg, #7C3AED, #EC4899)",
-                  boxShadow: "0 0 20px rgba(124, 58, 237, 0.5)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center"
-                }}
-              >
-                <div
-                  style={{
-                    width: "8px",
-                    height: "8px",
-                    borderRadius: "50%",
-                    backgroundColor: "#05001f"
-                  }}
-                />
-              </div>
+              {/* Year Tag */}
+              <span className="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-1 rounded-full text-sm">
+                {event.time}
+              </span>
 
-              <div
-                style={{
-                  width: "calc(50% - 48px)",
-                  padding: "32px",
-                  borderRadius: "16px",
-                  border: "1px solid transparent",
-                  background: "#05001f",
-                  position: "relative",
-                  transition: "transform 0.3s ease",
-                  cursor: "pointer"
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = "scale(1.02)";
-                  e.currentTarget.style.boxShadow = "0 0 30px rgba(124, 58, 237, 0.1)";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = "scale(1)";
-                  e.currentTarget.style.boxShadow = "none";
-                }}
-              >
-                <div
-                  style={{
-                    position: "absolute",
-                    inset: "-1px",
-                    borderRadius: "16px",
-                    padding: "1px",
-                    background: "linear-gradient(135deg, #7C3AED, #EC4899)",
-                    WebkitMask:
-                      "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
-                    WebkitMaskComposite: "xor",
-                    maskComposite: "exclude",
-                    zIndex: -1
-                  }}
-                />
-                <h3 style={{
-                  color: "white",
-                  fontSize: "1.5rem",
-                  fontWeight: "500",
-                  marginBottom: "12px"
-                }}>
-                  Event {event.id}
-                </h3>
-                <p style={{
-                  color: "#D8B4FE",
-                  fontWeight: "500",
-                  marginBottom: "8px"
-                }}>
-                  {event.time}
-                </p>
-                <p style={{
-                  color: "#E5E7EB",
-                  fontSize: "1.125rem"
-                }}>
-                  {event.title}
-                </p>
-              </div>
+              {/* Card Content */}
+              <h3 className="text-xl font-semibold text-center">{event.title}</h3>
             </div>
-          ))}
-        </div>
-      </div>
-      <div style={{
-        textAlign: "center",
-        marginBottom: "80px"
-      }}>
-        <h1 style={{
-          fontSize: "3.5rem",
-          fontWeight: "bold",
-          background: "linear-gradient(135deg, #7C3AED, #EC4899)",
-          WebkitBackgroundClip: "text",
-          WebkitTextFillColor: "transparent"
-        }}>
-          Techopia Day 2
-        </h1>
-      </div>
-
-      <div style={{
-        maxWidth: "800px",
-        margin: "0 auto",
-        position: "relative"
-      }}>
-        <div style={{
-          position: "absolute",
-          top: "-48px",
-          left: "50%",
-          transform: "translateX(-50%)",
-          fontSize: "1.125rem",
-          fontWeight: "500",
-          background: "linear-gradient(135deg, #7C3AED, #EC4899)",
-          WebkitBackgroundClip: "text",
-          WebkitTextFillColor: "transparent"
-        }}>
-          Start
-        </div>
-
-        <div style={{
-          position: "absolute",
-          left: "50%",
-          top: 0,
-          bottom: 0,
-          width: "2px",
-          transform: "translateX(-50%)",
-          background: "linear-gradient(180deg, #7C3AED, #EC4899)"
-        }} />
-
-        <div style={{
-          display: "flex",
-          flexDirection: "column",
-          gap: "96px"
-        }}>
-          {eventsDay2.map((event, index) => (
-            <div
-              key={event.id}
-              style={{
-                position: "relative",
-                display: "flex",
-                justifyContent: index % 2 === 0 ? "flex-end" : "flex-start",
-                alignItems: "center"
-              }}
-            >
-              <div
-                style={{
-                  position: "absolute",
-                  left: "50%",
-                  transform: "translateX(-50%)",
-                  width: "16px",
-                  height: "16px",
-                  borderRadius: "50%",
-                  background: "linear-gradient(135deg, #7C3AED, #EC4899)",
-                  boxShadow: "0 0 20px rgba(124, 58, 237, 0.5)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center"
-                }}
-              >
-                <div
-                  style={{
-                    width: "8px",
-                    height: "8px",
-                    borderRadius: "50%",
-                    backgroundColor: "#05001f"
-                  }}
-                />
-              </div>
-
-              <div
-                style={{
-                  width: "calc(50% - 48px)",
-                  padding: "32px",
-                  borderRadius: "16px",
-                  border: "1px solid transparent",
-                  background: "#05001f",
-                  position: "relative",
-                  transition: "transform 0.3s ease",
-                  cursor: "pointer"
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = "scale(1.02)";
-                  e.currentTarget.style.boxShadow = "0 0 30px rgba(124, 58, 237, 0.1)";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = "scale(1)";
-                  e.currentTarget.style.boxShadow = "none";
-                }}
-              >
-                <div
-                  style={{
-                    position: "absolute",
-                    inset: "-1px",
-                    borderRadius: "16px",
-                    padding: "1px",
-                    background: "linear-gradient(135deg, #7C3AED, #EC4899)",
-                    WebkitMask:
-                      "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
-                    WebkitMaskComposite: "xor",
-                    maskComposite: "exclude",
-                    zIndex: -1
-                  }}
-                />
-                <h3 style={{
-                  color: "white",
-                  fontSize: "1.5rem",
-                  fontWeight: "500",
-                  marginBottom: "12px"
-                }}>
-                  Event {event.id}
-                </h3>
-                <p style={{
-                  color: "#D8B4FE",
-                  fontWeight: "500",
-                  marginBottom: "8px"
-                }}>
-                  {event.time}
-                </p>
-                <p style={{
-                  color: "#E5E7EB",
-                  fontSize: "1.125rem"
-                }}>
-                  {event.title}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </div>
+    
   );
-}
+};
 
 export default Timeline;
