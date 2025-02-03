@@ -12,7 +12,7 @@ export function Footer() {
             href="/"
             className="text-xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent"
           >
-            Techopia
+            Techtopia
           </BrowserRouter>
           <div className="flex space-x-6">
             <BrowserRouter href="#" className="text-gray-400 hover:text-white">
@@ -29,7 +29,7 @@ export function Footer() {
             </BrowserRouter>
           </div>
         </div>
-        <div className="mt-4 text-center text-sm text-gray-400">© Techopia™. All rights reserved.</div>
+        <div className="mt-4 text-center text-sm text-gray-400">© Techtopia™. All rights reserved.</div>
       </div>
     </footer>
   );

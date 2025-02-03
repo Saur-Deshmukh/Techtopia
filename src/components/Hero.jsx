@@ -7,7 +7,7 @@ export function Hero() {
       <h1 className="text-4xl md:text-5xl font-bold mb-6">
         <span className="text-purple-500">Think big</span>, <span className="text-purple-400">achieve more</span>
         <br />
-        at <span className="bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">Techopia</span>
+        at <span className="bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">Techtopia</span>
       </h1>
       <p className="text-gray-400 max-w-2xl mx-auto mb-8">
         Make your data invisible by generating unlimited identities. The next level in privacy protection for online and
