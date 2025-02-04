@@ -1,35 +1,47 @@
 import React from 'react';
-import { BrowserRouter } from "react-router-dom";
-
 import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+
+const SocialLink = ({ href, icon: Icon, label }) => (
+  <a
+    href={href}
+    className="text-gray-400 hover:text-white transition-colors duration-200"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label={label}
+  >
+    <Icon className="w-6 h-6 hover:scale-110 transition-transform duration-200" />
+  </a>
+);
 
 export function Footer() {
   return (
-    <footer className="border-t border-gray-800 bg-[#05001f]">
+    <footer className="border-t border-gray-800 bg-[#05001f] text-gray-300">
       <div className="container mx-auto px-4 py-8">
-        <div className="flex justify-between items-center">
-          <BrowserRouter
+        <div className="flex flex-col items-center gap-6">
+          {/* Logo & Description */}
+          <a
             href="/"
-            className="text-xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent"
+            className="text-2xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent hover:opacity-90 transition-opacity"
           >
             Techtopia
-          </BrowserRouter>
-          <div className="flex space-x-6">
-            <BrowserRouter href="#" className="text-gray-400 hover:text-white">
-              <Twitter className="w-5 h-5" />
-            </BrowserRouter>
-            <BrowserRouter href="#" className="text-gray-400 hover:text-white">
-              <Facebook className="w-5 h-5" />
-            </BrowserRouter>
-            <BrowserRouter href="#" className="text-gray-400 hover:text-white">
-              <Instagram className="w-5 h-5" />
-            </BrowserRouter>
-            <BrowserRouter href="#" className="text-gray-400 hover:text-white">
-              <Linkedin className="w-5 h-5" />
-            </BrowserRouter>
+          </a>
+          <p className="text-sm text-center max-w-md">
+            Empowering the future through technology and innovation.
+          </p>
+
+          {/* Social Links */}
+          <div className="flex gap-6">
+            <SocialLink href="https://twitter.com/techtopia" icon={Twitter} label="Twitter" />
+            <SocialLink href="https://facebook.com/techtopia" icon={Facebook} label="Facebook" />
+            <SocialLink href="https://instagram.com/techtopia" icon={Instagram} label="Instagram" />
+            <SocialLink href="https://linkedin.com/company/techtopia" icon={Linkedin} label="LinkedIn" />
           </div>
+
+          {/* Copyright */}
+          <p className="text-sm text-gray-400">
+            © {new Date().getFullYear()} Techtopia™. All rights reserved.
+          </p>
         </div>
-        <div className="mt-4 text-center text-sm text-gray-400">© Techtopia™. All rights reserved.</div>
       </div>
     </footer>
   );

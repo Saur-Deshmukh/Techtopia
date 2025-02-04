@@ -9,8 +9,8 @@ import ParallaxLanding from "./components/Parallax";
 function Home() {
   return (
     <div className="min-h-screen bg-[#05001f] text-white overflow-x-hidden">
-        {/* <ParallaxLanding/> */}
-      <Header />
+        <ParallaxLanding/>
+      {/* <Header /> */}
       <main className="container mx-auto px-4">
         <Hero />
         <ExploreMap />
