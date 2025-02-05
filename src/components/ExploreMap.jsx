@@ -1,4 +1,5 @@
-import map from '/Techtopia.svg';
+import map from "/Techtopia.svg";
+import map1 from "/Techtopia-Laptop.svg";
 
 export function ExploreMap() {
   return (
@@ -10,9 +11,12 @@ export function ExploreMap() {
         </span>
       </h2>
       <div className="flex justify-center">
-        <object id="map" data={map} type="image/svg+xml" className="max-w-full h-auto">
-          <img src={map} alt="map" className="max-w-full h-auto" />
-        </object>
+        <picture>
+          {/* Loads map for mobile (max-width: 768px) */}
+          <source srcSet={map} media="(max-width: 768px)" />
+          {/* Loads map1 for larger screens */}
+          <img src={map1} alt="Techtopia Map" className="max-w-full h-auto" />
+        </picture>
       </div>
     </section>
   );
