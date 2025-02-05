@@ -1,5 +1,7 @@
 @import "tailwindcss";
 @tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -101,7 +103,8 @@
 }
 
 .mountain-2 {
-  bottom: 20px;
+  bottom: 8px;
+  right: 50px;
   z-index: 2;
 }
 
@@ -111,7 +114,7 @@
 }
 
 .sun {
-  top: 70%;
+  top: -30%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 40%;
@@ -140,16 +143,18 @@
 
 .copy {
   position: absolute;
-  bottom: 0%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 0;
+  bottom: 10%;
+  left: 27%;
+  transform: translate(-20%, -20%);
+  z-index: 1;
   color: var(--secondaryColor);
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   opacity: 0;
+  font-family: 'Michroma';
+  box-shadow: #ffffff;
 }
 
 .copy h1 {
@@ -179,4 +184,25 @@
 .about p {
   margin-top: 20px;
   width: 50%;
+}
+
+/* Cyberpunk Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  padding: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #080808; /* Dark background */
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #0ff, #f0f);
+  border-radius: 10px;
+  box-shadow: 0 0 5px #0ff, 0 0 10px #f0f; /* Neon Glow */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #f0f, #0ff);
+  box-shadow: 0 0 8px #0ff, 0 0 15px #f0f;
 }
