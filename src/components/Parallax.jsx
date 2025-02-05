@@ -1,9 +1,9 @@
 import { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import mountain3Img from "../assets/mountain-3.svg";
-import mountain2Img from "../assets/mountain-2.svg";
-import mountain1Img from "../assets/mountain-1.svg";
+import mountain3Img from "../assets/A.png";
+import mountain2Img from "../assets/B.png";
+import mountain1Img from "../assets/C.png";
 import sunImg from "../assets/sun.svg";
 import cloudsBottomImg from "../assets/clouds-bottom.svg";
 import cloudsLeftImg from "../assets/clouds-left.svg";
@@ -128,8 +128,8 @@ function ParallaxLanding() {
                 <img ref={mountain1} className='mountain-1' src={mountain1Img} />
                 <img ref={sun} className='sun' src={sunImg} />
                 <img ref={cloudsBottom} className='clouds-bottom' src={cloudsBottomImg} />
-                <img ref={cloudsLeft} className='clouds-left' src={cloudsLeftImg} />
-                <img ref={cloudsRight} className='clouds-right' src={cloudsRightImg} />
+                {/* <img ref={cloudsLeft} className='clouds-left' src={cloudsLeftImg} />
+                <img ref={cloudsRight} className='clouds-right' src={cloudsRightImg} /> */}
                 <img ref={stars} className='stars' src={starsImg} />
 
                 <div ref={copy} className="copy">
