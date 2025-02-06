@@ -65,11 +65,11 @@ const Timeline = () => {
     <div className="flex flex-col items-center justify-center min-h-screen py-10 px-4">
       <Card className="w-full max-w-6xl border-none bg-transparent shadow-none">
         <CardHeader className="text-center">
-          <CardTitle className="text-4xl font-bold bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-300 bg-clip-text text-transparent" style={{fontFamily:"Zen Dots"}}>
+          <CardTitle className="text-5xl font-bold bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-300 bg-clip-text text-transparent" style={{fontFamily:"Zen Dots"}}>
             Event Timeline
           </CardTitle>
-          <CardDescription className="text-gray-300 text-2xl mt-4 font-bold" style={{fontFamily : "Michroma"}}>
-            Suite of events curated for you 🚀
+          <CardDescription className="text-gray-300 text-4xl mt-4 font-bold" style={{fontFamily : "Michroma"}}>
+            Suite of events curated for you 🌆
           </CardDescription>
         </CardHeader>
 

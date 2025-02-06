@@ -4,15 +4,15 @@ import { Hero } from "@/components/Hero";
 import { ExploreMap } from "@/components/ExploreMap";
 import Timeline from "@/components/Timeline";
 import { Footer } from "@/components/Footer";
-import Scroller from "./components/Scroller1";
+// import Scroller from "./components/Scroller1";
+import ParallaxLanding from "./components/Parallax";
 
 function Home() {
   return (
-    <div className="min-h-screen bg-[#05001f] text-white overflow-x-hidden">
-        <Scroller />
+    <div className="min-h-screen bg-[#000000] text-white overflow-x-hidden">
+        <ParallaxLanding />
       {/* <Header /> */}
       <main className="container">
-        <Hero />
         <ExploreMap />
         <Timeline />
       </main>

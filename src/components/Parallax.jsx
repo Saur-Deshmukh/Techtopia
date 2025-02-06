@@ -133,10 +133,10 @@ function ParallaxLanding() {
                 <img ref={stars} className='stars' src={starsImg} />
 
                 <div ref={copy} className="copy flex items-center justify-center">
-                    <h1 className="bg-[radial-gradient(circle_at_top_left,_#0ff,_#f0f)] bg-clip-text text-transparent text-4xl font-extrabold tracking-wider 
+                <h1 className="bg-[radial-gradient(circle_at_top_left,_#ec4899,_#7e22ce,_#4338ca)] bg-clip-text text-transparent text-4xl font-extrabold tracking-wider 
 drop-shadow-[0_0_10px_rgba(255,255,0,0.5)] mx-auto">
-                        TechTopia
-                    </h1>
+    TechTopia
+</h1>
 
                 </div>
             </div>
