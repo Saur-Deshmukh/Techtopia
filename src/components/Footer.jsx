@@ -21,7 +21,7 @@ export function Footer() {
           {/* Logo & Description */}
           <a
             href="/"
-            className="text-2xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent hover:opacity-90 transition-opacity" style={{fontFamily : "Zen Dots"}}
+            className="text-2xl font-bold bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-300 bg-clip-text text-transparent hover:opacity-90 transition-opacity" style={{fontFamily : "Zen Dots"}}
           >
             Techtopia
           </a>

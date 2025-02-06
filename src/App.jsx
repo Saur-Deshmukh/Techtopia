@@ -4,14 +4,14 @@ import { Hero } from "@/components/Hero";
 import { ExploreMap } from "@/components/ExploreMap";
 import Timeline from "@/components/Timeline";
 import { Footer } from "@/components/Footer";
-import ParallaxLanding from "./components/Parallax";
+import Scroller from "./components/Scroller1";
 
 function Home() {
   return (
     <div className="min-h-screen bg-[#05001f] text-white overflow-x-hidden">
-        <ParallaxLanding/>
+        <Scroller />
       {/* <Header /> */}
-      <main className="container mx-auto px-4">
+      <main className="container">
         <Hero />
         <ExploreMap />
         <Timeline />
