@@ -77,7 +77,7 @@ const Timeline = () => {
           <div className="relative timeline-container mt-10">
             <div
               ref={lineRef}
-              className="absolute top-0 left-1/2 w-1 bg-gradient-to-b from-cyan-500 to-purple-500 transform -translate-x-1/2 hidden sm:block"
+              className="absolute top-0 left-1/2 w-1 bg-gradient-to-b from-pink-300 via-purple-300 to-indigo-300 transform -translate-x-1/2 hidden sm:block"
             ></div>
 
 {events.map((event, index) => (
