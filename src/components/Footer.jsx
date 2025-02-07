@@ -1,17 +1,6 @@
 import React from 'react';
-import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
 
-const SocialLink = ({ href, icon: Icon, label }) => (
-  <a
-    href={href}
-    className="text-gray-400 hover:text-white transition-colors duration-200"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label={label}
-  >
-    <Icon className="w-6 h-6 hover:scale-110 transition-transform duration-200" />
-  </a>
-);
+
 
 export function Footer() {
   return (
@@ -26,20 +15,7 @@ export function Footer() {
             Techtopia
           </a>
           <p className="text-sm text-center max-w-md">
-            Empowering the future through technology and innovation.
-          </p>
-
-          {/* Social Links */}
-          <div className="flex gap-6">
-            <SocialLink href="https://twitter.com/techtopia" icon={Twitter} label="Twitter" />
-            <SocialLink href="https://facebook.com/techtopia" icon={Facebook} label="Facebook" />
-            <SocialLink href="https://instagram.com/techtopia" icon={Instagram} label="Instagram" />
-            <SocialLink href="https://linkedin.com/company/techtopia" icon={Linkedin} label="LinkedIn" />
-          </div>
-
-          {/* Copyright */}
-          <p className="text-sm text-gray-400">
-            © {new Date().getFullYear()} Techtopia™. All rights reserved.
+            IEEE SPIT
           </p>
         </div>
       </div>
