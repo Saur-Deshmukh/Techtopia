@@ -12,10 +12,8 @@ function Home() {
     <div className="min-h-screen bg-[#000000] text-white overflow-x-hidden">
         <ParallaxLanding />
       {/* <Header /> */}
-      <main className="container">
         <ExploreMap />
         <Timeline />
-      </main>
       <Footer />
     </div>
   );

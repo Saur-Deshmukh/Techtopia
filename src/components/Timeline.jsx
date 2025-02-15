@@ -62,7 +62,7 @@ const Timeline = () => {
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-10 px-4 bg-gradient-to-b from-[#000000] to-[#0e011c]">
+    <div className="flex flex-col items-center w-screen m-auto justify-center min-h-screen py-10 px-4 bg-gradient-to-b from-[#000000] to-[#0e011c]">
       <Card className="w-full max-w-6xl border-none bg-transparent shadow-none">
         <CardHeader className="text-center">
           <CardTitle className="text-5xl font-bold bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-300 bg-clip-text text-transparent" style={{ fontFamily: "Zen Dots" }}>
