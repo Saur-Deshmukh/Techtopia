@@ -1,44 +1,101 @@
 const events = [
-    {
-      time: "09:30 AM - 12:00 PM",
-      title: "Blockchain Hackathon Presentation",
-      description: "Join us for an exciting blockchain hackathon where teams will present innovative solutions.",
-      location: "Main Hall",
-      category: "Hackathon",
-      color: "from-blue-500 to-cyan-500",
-    },
-    {
-      time: "01:00 PM - 06:00 PM",
-      title: "GPT Hackathon",
-      description: "Explore the possibilities of GPT technology in this intensive coding session.",
-      location: "Tech Lab A",
-      category: "Hackathon",
-      color: "from-purple-500 to-pink-500",
-    },
-    {
-      time: "01:00 PM - 06:00 PM",
-      title: "IOT Warzone",
-      description: "Compete in IoT challenges and showcase your hardware hacking skills.",
-      location: "Innovation Hub",
-      category: "Competition",
-      color: "from-orange-500 to-red-500",
-    },
-    {
-      time: "09:30 AM - 12:00 PM",
-      title: "Auto Expo",
-      description: "Experience the future of autonomous vehicles and smart transportation.",
-      location: "Exhibition Center",
-      category: "Exhibition",
-      color: "from-green-500 to-emerald-500",
-    },
-    {
-      time: "01:00 PM - 05:00 PM",
-      title: "Bug Bounty",
-      description: "Hunt for vulnerabilities and win prizes in this security challenge.",
-      location: "Security Zone",
-      category: "Competition",
-      color: "from-yellow-500 to-orange-500",
-    },
+  {
+    day: "Day 1",
+    time: "10:00 AM - 06:00 PM",
+    title: "Tech Expo",
+    location: "SPJIMR Ground",
+    category: "Exhibition",
+    color: "from-blue-500 to-cyan-500"
+  },
+  {
+    day: "Day 1",
+    time: "11:00 AM - 01:00 PM",
+    title: "Virtual Tour",
+    location: "Room - 008",
+    category: "Exhibition",
+    color: "from-purple-500 to-pink-500"
+  },
+  {
+    day: "Day 1",
+    time: "11:00 AM - 01:00 pm",
+    title: "IOT Workshop",
+    location: "Room - 003",
+    category: "Workshop",
+    color: "from-orange-500 to-red-500"
+  },
+  
+  {
+    day: "Day 1",
+    time: "03:00 PM - 06:00 PM",
+    title: "Capture the Flag",
+    location: "Various Labs",
+    category: "Competition",
+    color: "from-green-500 to-emerald-500"
+  },
+  {
+    day: "Day 1",
+    time: "03:00 PM - 07:00 PM",
+    title: "Case Study",
+    location: "Room - 008",
+    category: "Competition",
+    color: "from-yellow-500 to-orange-500"
+  },
+  {
+    day: "Day 1",
+    time: "03:00 PM - 04:00 PM",
+    title: "AI Panel Discussion",
+    location: "Room - 003 & 105",
+    category: "Panel Discussion",
+    color: "from-blue-500 to-purple-500"
+  },
+  {
+    day: "Day 2",
+    time: "10:00 AM - 06:00 PM",
+    title: "Tech Expo",
+    location: "SPJIMR Ground",
+    category: "Exhibition",
+    color: "from-blue-500 to-cyan-500"
+  },
+  {
+    day: "Day 2",
+    time: "11:00 AM - 01:00 PM",
+    title: "Chai & Why?",
+    location: "Room - 008",
+    category: "Workshop",
+    color: "from-purple-500 to-pink-500"
+  },
+  {
+    day: "Day 2",
+    time: "10:00 AM - 05:00 PM",
+    title: "Gen-AI Hackathon",
+    location: "Various Labs",
+    category: "Hackathon",
+    color: "from-orange-500 to-red-500"
+  },
+  {
+    day: "Day 2",
+    time: "10:00 AM - 05:00 PM",
+    title: "IOT Warzone",
+    location: "Various Labs",
+    category: "Hackathon",
+    color: "from-yellow-500 to-orange-500"
+  },
+  {
+    day: "Day 2",
+    time: "03:00 PM - 04:00 PM",
+    title: "CDAC Speech",
+    location: "Room - 008",
+    category: "WorkShop",
+    color: "from-green-500 to-emerald-500"
+  },
+  {
+    day: "Day 2",
+    time: "11:00 AM - 01:00 PM",
+    title: "Hackathon Presentation",
+    location: "Room - 003, 702, 703",
+    category: "Hackathon",
+    color: "from-blue-500 to-purple-500"
+  },
 ];
 
 export default events;
