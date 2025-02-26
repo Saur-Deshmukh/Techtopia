@@ -1,4 +1,4 @@
-import map from "/Techtopia.svg";
+import map from "/Techtopia-Mobile.svg";
 import map1 from "/Techtopia-Laptop.svg";
 
 export function ExploreMap() {
