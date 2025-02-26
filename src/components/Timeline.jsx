@@ -10,6 +10,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import events from "../Data/eventsData";
+import CardBg from '../assets/Card-bg.png'
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -142,6 +143,14 @@ const Timeline = () => {
                     index % 2 !== 0 ? "sm:ml-auto" : "sm:mr-auto"
                   }`}
                 >
+                <div
+                    className="absolute inset-0 bg-cover bg-center rounded-xl z-[-1]"
+                    style={{
+                      backgroundImage: `url(${CardBg})`,
+                      opacity: 0.5, // Make the background more visible
+                      backgroundPosition: "center bottom", // Align towards the bottom
+                    }}
+                  ></div>
                   <div className="relative p-4 sm:p-6">
                     <span className={`absolute -top-3 left-4 sm:left-6 inline-block bg-gradient-to-r ${event.color} text-white px-3 sm:px-4 py-1 rounded-full text-xs sm:text-sm font-medium`}>
                       {event.category}
